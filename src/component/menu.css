@@ -1,0 +1,38 @@
+.NavBar{
+	width: 100%;
+	background-color: black;
+	display: flex;
+}
+
+
+#imageMenu{
+	width: 15%;
+	height: 10vh;
+	margin-left: 13vw;
+}
+
+.menu{
+	margin-left:auto;
+	padding-left: 15vw;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	display: flex;
+	width: 45%;
+}
+
+a{
+	padding: 3vh;
+	font-family: arial black;
+	font-size: 2.0vh;
+	margin-left: 0.5vw;
+	margin-right: 0.5vw;
+	color:white;
+	cursor: pointer;
+}
+
+a:hover{
+	background-color: var(--tema3);
+	color:var(--tema2);
+	border-radius: 0.5vw;
+}
+

@@ -1,8 +1,21 @@
+*{
+	margin: 0%;
+}
+
+body{
+	background-image: url("images/login/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
 .layout {
     width: 60%;
+	height: 100vh;
+	background-color: white;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+	position: absolute;
+	padding: 1vh;
 }
 
 .paper {
@@ -26,3 +39,21 @@
 .submit {
     marginTop: 20px;
 }
+
+
+.linkTo{
+	padding: 1vh;
+	width: 98%;
+	margin:auto;
+	font-family: arial black;
+	font-size: 1.5vh;
+	color: var(--tema2);
+	border-radius: 0.5vw;
+}
+
+.linkTo:hover{
+	cursor: pointer;
+	text-decoration: underline;
+	color: var(--tema1);
+}
+

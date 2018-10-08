@@ -1,0 +1,63 @@
+
+*{
+	margin: 0%;
+}
+
+.userPic{
+	width: 20vw;
+}
+
+.back{
+	padding-top: 1vh;
+	padding-bottom: 1vh; 
+	min-height: 98vh;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url("images/registerView/back.jpg");
+}
+
+.selectorSection{
+	display: flex;
+}
+
+
+
+.imageSelector{
+	width:3.5vw;
+	height: 3.5vw;;
+	border-radius: 50%;
+	margin: 1vh;
+}
+
+.form{
+	padding: 1vh;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	
+}
+
+#info{
+	display: flex;
+}
+
+#infoImage{
+	width: 20vw;
+	height: 20vw;
+	display: flex;
+}
+
+#infoProduct{
+	width: 65%;
+	text-align: left;
+	margin-left: 5%;
+}
+
+.enviar{
+	background-color: var(--tema2);
+}
+
+
+
+
+

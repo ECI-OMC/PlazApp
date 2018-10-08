@@ -1,0 +1,71 @@
+:root{
+	--tema1: green;
+	--tema2: black;
+	--tema3: white;
+	--tema4: #071B48;
+	--shadows: gray;
+}
+
+p{
+	text-align: left;
+	font-family: arial black;
+	font-size: 2.0vh;
+	color: var(--tema2);
+}
+
+.tittle{
+	font-size: 3.5vh;
+	font-family: Arial black;
+	color: var(--tema1);
+	text-shadow: 0px 0px 0.3vh var(--shadows); 
+}
+
+h1{
+	font-family: arial black;
+	font-size: 5.5vh;
+	color: var(--tema1);
+}
+
+h2{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	text-align: center;
+	width: 100%;
+	border-radius: 1vh;
+	padding: 0.8vh;
+	background-color: var(--tema1);
+	font-family: arial black;
+	font-size: 4.5vh;
+	color: var(--tema3);
+}
+
+.section{
+	background-color: rgba(255,255,255,0.95);
+	width: 70%;
+	padding: 3vw;
+	margin-left: auto;
+    margin-right: auto;
+	border-radius: 0.5vw;
+	margin-top:1vh;
+	margin-bottom:1vh;
+	box-shadow: 0px 0px 0.1vw var(--shadows); 
+}
+
+.map{
+	margin: auto;
+	width: 20vw;
+	height: 20vw;
+	background-image: url('images/registerView/map.png');
+	background-size: cover;
+}
+
+.selector{
+	margin-top: 2vh;
+	margin-left: 2%;
+	width: 85%;
+	font-family: arial black;
+	font-size: 1.5vh;
+	padding: 1vh;
+	border-radius: 0.6vh;
+	margin-bottom: 3vh;
+}

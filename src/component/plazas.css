@@ -1,0 +1,27 @@
+.slideShow{
+	width: 100%;
+	height: 40vh;
+	padding: 0%;
+	display:flex;
+	background-color: var(--tema2);
+}
+
+.controlContainer{
+	padding-top: 15vh; 
+	height: 40vh;
+	width: 10%;
+}
+
+.controlSlide{
+	cursor: pointer;
+	font-size: 5vh;
+	padding: 2vh;
+	border-radius: 100%;
+	background-color: black;
+	color: white;
+}
+
+.imageSlide{
+	width:80%;
+	height: 40vh;
+}

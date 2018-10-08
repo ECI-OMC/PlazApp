@@ -7,14 +7,12 @@ import moment from "moment";
 
 export class SignUp extends React.Component{
 
-
+	constructor(props) {
+		super(props);
+		this.state = {text: '', priority: 0, dueDate: moment()};
+   }
+   
     render(){
-
-        constructor(props) {
-            super(props);
-            this.state = {text: '', priority: 0, dueDate: moment()};
-        }
-
 
         return (
             <React.Fragment>
