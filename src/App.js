@@ -16,7 +16,22 @@ class App extends Component {
 	
 	constructor(props) {
 		super(props);
-		this.state = {Logged: false, User: "", pass: ""};
+		this.state = {	
+						user:"", 
+						pass:"", 
+						Logged: false, 
+						User: {nick:"",name:"",rol:"",email:"",rating:0}, 
+						users : {
+							"admin":{nick:"admin",name:"Administrator PLazApp",rol:"Admin",email:"administrator@plazapp.com",rating:10, pass:"admin2018"}, 
+							"Jdcc":{nick:"Jdcc",name:"Jefferson Castañeda", rol:"Vendedor", email:"jefferdcc@gmail.com",rating:3,pass:"Jeffer96"}, 
+							"Eeci":{nick:"Eeci",name:"Estudiante Eci", rol:"Comprador", email:"estudiante-eci@gmail.com",rating:0,pass:"estudiante"}
+								},
+						usersXemail: {
+							"jefferdcc@gmail.com":"Jdcc",
+							"administrator@plazapp.com":"admin",
+							"estudiante-eci@gmail.com":"Eeci"
+								}
+					};
 	}
 	
 
@@ -25,24 +40,55 @@ class App extends Component {
 		
 	}
 
+	handleCurrentUser = (nck,nm,rl,ml,rtng) => {
+		this.setState({User: {nick:nck, name:nm, rol:rl, email: ml, rating: rtng}});
+	}
+
+	handleRegisterUser = (nck, nm, rl, ml, rtng) => {
+		this.users[nck] = {nick: nck, name:nm, rol: rl, email: ml, rating:rtng};
+	}
+
 	
   render() {
 	if (this.state.Logged){
 		return(
 			<div className="App">
 				<Menu/>
-				<RegisterView/>
+				<RegisterView currentUser={this.state.User}/>
 			</div>
 		);
 	}
 	else{
 		return(
 			<div className="App">
-				<Login handleLogin = {this.handleLogin}/>
+				<Login handleLogin = {this.handleLogin} 
+						handleUserChange = {this.handleUserChange}
+						handlePassChange = {this.handlePassChange}/>
 			</div>
 		);
 	}
   }
+
+	handleUserChange = (event) =>{
+		this.setState({ user : event.target.value});	
+	}
+	
+	handlePassChange = (event) =>{
+		this.setState({ pass : event.target.value});
+	}
+
+	handleLogin = (event) => {
+		var u = this.state.user;
+		if (this.state.user.includes("@")){
+    		u = this.state.usersXemail[this.state.user];
+			this.setState({ user : u });
+		}
+		if (this.state.users[u] && this.state.users[u].pass == this.state.pass){
+			this.setState({Logged : true})
+		}else{
+			alert("Usuario o contraseña Incorrecta. Intente de nuevo");
+		}		
+	}
 }
 
 export default App;

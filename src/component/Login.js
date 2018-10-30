@@ -18,24 +18,8 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 export class Login extends React.Component{
 	constructor(props){
 		super(props);
-		this.state={User:"",pass:""};
 	}
 
-	handleUserChange = (event) =>{
-		this.setState({ User : event.target.value});
-	}
-	
-	handlePassChange = (event) =>{
-		this.setState({ pass : event.target.value});
-	}
-	
-	handleSubmit =() =>{
-		if (this.state.User == localStorage.getItem("User") && this.state.pass == localStorage.getItem("Pass")){
-			this.props.handleLogin(true);
-		}else{
-			this.props.handleLogin(false);
-		}
-	}
 	
 	SignUp = () => (
 		<SignUp/>
@@ -54,7 +38,7 @@ export class Login extends React.Component{
                         <form className="form">
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="email">Email </InputLabel>
-                                <Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.handleUserChange}/>
+                                <Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.props.handleUserChange}/>
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="password">Contraseña</InputLabel>
@@ -63,7 +47,7 @@ export class Login extends React.Component{
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
-									onChange={this.handlePassChange}
+									onChange={this.props.handlePassChange}
                                 />
                             </FormControl>
                             <Button
@@ -72,7 +56,7 @@ export class Login extends React.Component{
                                 variant="raised"
                                 color="primary"
                                 className="submit"
-								onClick = {this.handleSubmit}
+								onClick = {this.props.handleLogin}
                             >
                                 Iniciar 
                             </Button>
