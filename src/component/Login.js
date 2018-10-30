@@ -30,7 +30,11 @@ export class Login extends React.Component{
 	}
 	
 	handleSubmit =() =>{
-		
+		if (this.state.User == localStorage.getItem("User") && this.state.pass == localStorage.getItem("Pass")){
+			this.props.handleLogin(true);
+		}else{
+			this.props.handleLogin(false);
+		}
 	}
 	
 	SignUp = () => (
@@ -50,7 +54,7 @@ export class Login extends React.Component{
                         <form className="form">
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="email">Email </InputLabel>
-                                <Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.props.handleUserChange}/>
+                                <Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.handleUserChange}/>
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="password">Contraseña</InputLabel>
@@ -59,7 +63,7 @@ export class Login extends React.Component{
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
-									onChange={this.props.handlePassChange}
+									onChange={this.handlePassChange}
                                 />
                             </FormControl>
                             <Button
@@ -68,12 +72,12 @@ export class Login extends React.Component{
                                 variant="raised"
                                 color="primary"
                                 className="submit"
-								onClick = {this.props.handleSubmit}
+								onClick = {this.handleSubmit}
                             >
                                 Iniciar 
                             </Button>
                         </form>
-						<a className= "linkTo">¿No se ha registrado?... ingrese ahora !GRATIS¡</a>
+						<a className= "linkTo">Registrate Ahora</a>
 						
                     </Paper>
 					<div id="sideImg"/>
