@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
@@ -123,11 +124,11 @@ export class RegisterView extends React.Component{
 		render(){
 			return(
 				<main className="back">
-					<div id="head" className="section">
-						<Avatar className="userPic"/>
+					<Paper square={true} className="section">
 						<h1 className="tittle">Bienvenido al registro de productos</h1>
-					</div>
-					<div className="section">
+						<br/>
+						<hr/>
+						<br/>
 						<p>Seleccione el tipo de producto a vender</p>
 						<div className="selectorSection">
 							<img className="imageSelector" src={this.selected}/>
@@ -154,49 +155,60 @@ export class RegisterView extends React.Component{
 							<option value="Arroba">Arroba (@)</option>
 							<option value="Unidad">Unidad (u)</option>
 						</select>
-					</div>
-					<div className="section">
+				</Paper>
+				<Paper square = {true} className="section" id="inline">
+					<div className = "paperSection">
 						<form className="form">
-                            <FormControl margin="normal" required fullWidth>
-                                <InputLabel htmlFor="cantidad">Establezca la cantidad del producto ({this.state.unit})</InputLabel>
-                                <Input id="cantidad" 
+	                        <FormControl margin="normal" required fullWidth>
+	                            <InputLabel htmlFor="cantidad">Establezca la cantidad del producto ({this.state.unit})</InputLabel>
+	                            <Input id="cantidad" 
 										name="cantidad" 
 										autoComplete="email" 
 										autoFocus 
 										disabled = {(this.state.productType=="none")? true : false}
 										onChange={this.addCuantity}
 								/>
-                            </FormControl>
-                            <FormControl margin="normal" fullWidth>
-                                <InputLabel htmlFor="description">Descricion del producto</InputLabel>
-                                <Input
-                                    name="description"
+	                        </FormControl>
+	                        <FormControl margin="normal" fullWidth>
+	                            <InputLabel htmlFor="description">Descricion del producto</InputLabel>
+	                            <Input
+	                                name="description"
 									type="text"
 									disabled = {(this.state.productType=="none")? true : false}
 									onChange={this.addDescription}
-                                />
-                            </FormControl>
+	                            />
+	                        </FormControl>
 							<FormControl margin="normal" fullWidth>
-                                <InputLabel htmlFor="valor">Valor por unidad</InputLabel>
-                                <Input
-                                    name="valor"
+	                            <InputLabel htmlFor="valor">Valor por unidad</InputLabel>
+	                            <Input
+	                                name="valor"
 									type="text"
 									disabled = {(this.state.productType=="none")? true : false}
 									onChange={this.addValue}
-                                />
-                            </FormControl>
-                        </form>
+	                            />
+	                        </FormControl>
+	                    </form>
 					</div>
-					<div className="section">
+					<div className="paperSection">
 						<div id="info">
 							<img src={this.selected} id="infoImage"/>
 							<div id="infoProduct">
-								<h2>producto: {this.state.product}</h2>
+								<h2>Detalles</h2>
+								<br/>
+								<hr/>
+								<br/>
+								<p> producto: {this.state.product} </p>
+								<br/>
 								<p> cantidad: {this.state.cuantity} </p>
+								<br/>
 								<p> descripcion: {this.state.descript} </p>
+								<br/>
 								<p> total: {this.state.total} </p>
 							</div>
 						</div>
+					</div>
+				</Paper>
+				<Paper className="section">
 						<h2> ubicacion </h2>
 						<div className="map">
 						</div>
@@ -210,8 +222,7 @@ export class RegisterView extends React.Component{
 						>
 							 Registrar Producto
 						</Button>
-					</div>
-					
+				</Paper>
 					
 				</main>
 			

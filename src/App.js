@@ -24,7 +24,8 @@ class App extends Component {
 						users : {
 							"admin":{nick:"admin",name:"Administrator PLazApp",rol:"Admin",email:"administrator@plazapp.com",rating:10, pass:"admin2018"}, 
 							"Jdcc":{nick:"Jdcc",name:"Jefferson Castañeda", rol:"Vendedor", email:"jefferdcc@gmail.com",rating:3,pass:"Jeffer96"}, 
-							"Eeci":{nick:"Eeci",name:"Estudiante Eci", rol:"Comprador", email:"estudiante-eci@gmail.com",rating:0,pass:"estudiante"}
+							"Eeci":{nick:"Eeci",name:"Estudiante Eci", rol:"Comprador", email:"estudiante-eci@gmail.com",rating:0,pass:"estudiante"},
+							"1234":{nick:"1234", name:"1234", rol:"none", email:"1234@gmail.com", rating:0,pass:"1234"}
 								},
 						usersXemail: {
 							"jefferdcc@gmail.com":"Jdcc",
