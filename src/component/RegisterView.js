@@ -8,13 +8,20 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import LockIcon from '@material-ui/icons/LockOutlined';
 import Select  from '@material-ui/core/Select';
+//import GoogleMapReact from 'load-google-maps-api';
 import './RegisterView.css';
 import './styles.css';
 
 var opts = [<option value="none">Seleccione una opcion</option>];
 
+//const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+
 export class RegisterView extends React.Component{
 	
+		/**static defaultProps = {
+			center: { lat: 40.7446790, lng: -73.9485420 },
+			zoom: 11
+		}**/
 	
 		constructor(props) {
 			super(props);
@@ -210,8 +217,7 @@ export class RegisterView extends React.Component{
 				</Paper>
 				<Paper className="section">
 						<h2> ubicacion </h2>
-						<div className="map">
-						</div>
+						
 						<Button
 							type="submit"
 							fullWidth

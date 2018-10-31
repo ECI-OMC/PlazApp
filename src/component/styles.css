@@ -53,6 +53,12 @@ h2{
 	width: 40%;
 }
 
+.midSection{
+	width: 49%;
+	display: inline-block;
+	align-items: center;
+}
+
 .map{
 	margin: auto;
 	width: 20vw;
