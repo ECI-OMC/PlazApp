@@ -3,9 +3,12 @@ import './App.css';
 import {LandingView} from "./views/LandingView";
 import {LoginView} from "./views/LoginView";
 import {DashboardView} from "./views/DashboardView";
+import {NewUserView} from "./views/NewUserView";
+
 import {RegisterView} from "./component/RegisterView";
 import {PlazasView} from "./component/PlazasView";
 import {UserView} from "./component/UserView";
+import {Menu} from "./component/Menu";
 import {
     BrowserRouter as Router,
     Route,
@@ -17,9 +20,18 @@ import {
 class App extends Component {
 	Landing = () => <LandingView />;
 	Login = () => <LoginView />;
+	NewUser = () => <NewUserView />;
 	Dashboard = () => <DashboardView />;
-    RegisterProduct = () => <RegisterView/>;
-    Plazas = () => <PlazasView/>;
+    RegisterProduct = () =>
+        <div >
+     				<Menu/>
+     				<RegisterView/>
+        </div>
+    Plazas = () =>
+        <div >
+                <Menu/>
+                <PlazasView />
+        </div>;
     user = () => <UserView/>;
 
     render() {
@@ -39,6 +51,7 @@ class App extends Component {
                     <Route exact path="/dashboard" component={this.Dashboard} />
                     <Route exact path="/newProduct" component={this.RegisterProduct} />
                     <Route exact path="/plaza" component={this.Plazas} />
+                    <Route exact path="/newUser" component={this.NewUser} />
                     <Redirect to="/" />
                 </Switch>
             );

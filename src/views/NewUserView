@@ -1,0 +1,18 @@
+import React from 'react'
+
+import HeaderLanding from "../component/HeaderLanding";
+import HeaderLanding from "../component/Checkout";
+
+
+export class NewUserView extends React.Component{
+    render(){
+        return (
+            <div>
+                <HeaderLanding />
+                <br/>
+                <Checkout />
+
+            </div>
+        );
+    }
+}

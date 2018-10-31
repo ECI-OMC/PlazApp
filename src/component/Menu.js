@@ -15,7 +15,7 @@ export class Menu extends React.Component{
 			<div className = "NavBar">
 				<img src={require('./images/name.png')} id="imageMenu" />
 				<div className="menu">
-					<a>
+					<a href="">
 						Registrar Producto
 					</a>
 					<a>

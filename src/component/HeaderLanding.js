@@ -35,7 +35,7 @@ function HeaderLanding(props) {
                         Bienvenidos
                     </Typography>
                     <Button color="inherit" href="/login">Entrar</Button>
-                    <Button color="inherit" href="/singup">Registrarse</Button>
+                    <Button color="inherit" href="/newUser">Registrarse</Button>
                 </Toolbar>
             </AppBar>
         </div>
