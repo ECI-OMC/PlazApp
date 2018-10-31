@@ -8,58 +8,42 @@ import InputLabel from '@material-ui/core/InputLabel';
 import LockIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import {SignUp} from './SignUp';
+
 import './Login.css'
 import './styles.css';
-import RegisterView from './RegisterView.js';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 
 export class Login extends React.Component{
-	constructor(props){
-		super(props);
-		this.state={User:"",pass:""};
-	}
 
-	handleUserChange = (event) =>{
-		this.setState({ User : event.target.value});
-	}
-	
-	handlePassChange = (event) =>{
-		this.setState({ pass : event.target.value});
-	}
-	
-	handleSubmit =() =>{
-		
-	}
-	
-	SignUp = () => (
-		<SignUp/>
-	);
-	
     render(){
         return (
             <React.Fragment>
                 <CssBaseline />
-                <main className="layout">
+
                     <Paper className="paper">
                         <Avatar className="avatar">
                             <LockIcon />
                         </Avatar>
-                        <Typography variant="headline">Iniciar sesion</Typography>
+                        <Typography variant="headline">Sign in</Typography>
                         <form className="form">
                             <FormControl margin="normal" required fullWidth>
-                                <InputLabel htmlFor="email">Email </InputLabel>
-                                <Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.props.handleUserChange}/>
+                                <InputLabel htmlFor="email">Email Address</InputLabel>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    autoComplete="email"
+                                    autoFocus
+                                    onChange = {this.props.handleEmail}
+                                />
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
-                                <InputLabel htmlFor="password">Contraseña</InputLabel>
+                                <InputLabel htmlFor="password">Password</InputLabel>
                                 <Input
                                     name="password"
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
-									onChange={this.props.handlePassChange}
+                                    onChange = {this.props.handlePassword}
                                 />
                             </FormControl>
                             <Button
@@ -68,16 +52,13 @@ export class Login extends React.Component{
                                 variant="raised"
                                 color="primary"
                                 className="submit"
-								onClick = {this.props.handleSubmit}
+                                href="/dashboard"
                             >
-                                Iniciar 
+                                Sign in
                             </Button>
                         </form>
-						<a className= "linkTo">¿No se ha registrado?... ingrese ahora !GRATIS¡</a>
-						
                     </Paper>
-					<div id="sideImg"/>
-                </main>
+
             </React.Fragment>
         );
     }
