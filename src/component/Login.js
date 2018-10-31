@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 export class Login extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {toSignUp : false};
+		this.state = {toSignUp : false, user:""};
 	}
 	
 	goToSignUp = () => {
@@ -40,6 +40,11 @@ export class Login extends React.Component{
 	
 	cancelSignUp = () => {
 		this.setState({toSignUp : false});
+	}
+	
+	userChange = (event) => {
+		this.setState({user : event.target.value});
+		this.props.handleUserChange(event);
 	}
 	
     render(){
@@ -67,7 +72,7 @@ export class Login extends React.Component{
 							<form className="form">
 								<FormControl margin="normal" required fullWidth>
 									<InputLabel htmlFor="email">Email </InputLabel>
-									<Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.props.handleUserChange}/>
+									<Input id="email" name="email" autoComplete="email" autoFocus onChange = {this.userChange}/>
 								</FormControl>
 								<FormControl margin="normal" required fullWidth>
 									<InputLabel htmlFor="password">Contraseña</InputLabel>
@@ -85,6 +90,7 @@ export class Login extends React.Component{
 									variant="raised"
 									color="primary"
 									className="submit"
+									disabled = {this.state.user==""}
 									onClick = {this.props.handleLogin}
 								>
 									Iniciar sesion
